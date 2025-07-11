@@ -22,9 +22,9 @@ export default function Hero() {
         <Image
           src="/basi.png"
           alt="Basilisk Logo"
-          width={200}
-          height={200}
-          className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 object-contain drop-shadow-[0_0_20px_rgba(0,234,254,0.4)]"
+          width={600}
+          height={600}
+          className="w-[36rem] h-[36rem] sm:w-[42rem] sm:h-[42rem] lg:w-[48rem] lg:h-[48rem] object-contain drop-shadow-[0_0_20px_rgba(0,234,254,0.4)]"
           priority
         />
       </motion.div>
