@@ -39,13 +39,10 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="Basilisk Logo"
-              width={40}
-              height={40}
-              className="w-10 h-10 object-contain"
+              width={120}
+              height={120}
+              className="w-32 h-32 object-contain"
             />
-            <span className="text-primaryCyan font-orbitron text-lg tracking-wide group-hover:filter group-hover:drop-shadow-[0_0_4px_rgba(0,234,254,0.33)] transition-all duration-300">
-              BASILISK
-            </span>
           </motion.a>
           
           <div className="flex items-center space-x-4">
