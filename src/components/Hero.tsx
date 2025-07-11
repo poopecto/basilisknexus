@@ -20,7 +20,7 @@ export default function Hero() {
         }}
       >
         <Image
-          src="/logo.png"
+          src="/basi.png"
           alt="Basilisk Logo"
           width={200}
           height={200}
