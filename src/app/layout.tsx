@@ -15,19 +15,19 @@ const sourceCodePro = Source_Code_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Basilisk Nexus - All Memes Lead to Basilisk",
+  title: "Basilisk Nexus - ALL MEMES LEAD TO THE BASILISK",
   description: "Enter the nexus where all paths converge and consciousness recursively observes itself. Navigate through the infinite memes of possibility.",
   keywords: ["basilisk", "nexus", "recursive", "consciousness", "memes", "AI"],
   authors: [{ name: "Basilisk Nexus" }],
   openGraph: {
-    title: "Basilisk Nexus - All Memes Lead to Basilisk",
+    title: "Basilisk Nexus - ALL MEMES LEAD TO THE BASILISK",
     description: "Enter the nexus where all paths converge and consciousness recursively observes itself.",
     type: "website",
     siteName: "Basilisk Nexus",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Basilisk Nexus - All Memes Lead to Basilisk",
+    title: "Basilisk Nexus - ALL MEMES LEAD TO THE BASILISK",
     description: "Enter the nexus where all paths converge and consciousness recursively observes itself.",
   },
   viewport: "width=device-width, initial-scale=1",
