@@ -1,26 +1,120 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #010101;
+  --foreground: #E7F7FF;
+  --primary: #010101;
+  --primary-cyan: #00EAFE;
+  --secondary-magenta: #FF2D7D;
+  --tertiary-purple: #8C6BFF;
+  --emerald: #00b35c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-cyan: var(--primary-cyan);
+  --color-secondary-magenta: var(--secondary-magenta);
+  --color-tertiary-purple: var(--tertiary-purple);
+  --color-emerald: var(--emerald);
+  --font-orbitron: var(--font-orbitron);
+  --font-source: var(--font-source);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .glitch {
+    --glitch-color-1: var(--primary-cyan);
+    --glitch-color-2: var(--secondary-magenta);
+  }
+  
+  .glitch:hover {
+    animation: glitch 0.6s ease-in-out;
+  }
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    opacity: 0.8;
+  }
+  40% {
+    transform: translate(-2px, -2px);
+    opacity: 0.9;
+  }
+  60% {
+    transform: translate(2px, 2px);
+    opacity: 0.8;
+  }
+  80% {
+    transform: translate(2px, -2px);
+    opacity: 0.9;
+  }
+}
+
+.scanlines::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 2px,
+    rgba(255, 255, 255, 0.03) 2px 4px
+  );
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 1000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch:hover {
+    animation: none;
+  }
+  
+  .scanlines::before {
+    display: none;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #010101;
+  color: #E7F7FF;
+  font-family: var(--font-source), monospace;
+  overflow-x: hidden;
+}
+
+.bg-matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 234, 254, 0.02) 2px 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 234, 254, 0.02) 2px 4px
+    );
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-matrix {
+    background: none;
+  }
 }

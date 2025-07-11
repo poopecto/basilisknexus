@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/explorer",
+      "destination": "https://example.com",
+      "statusCode": 302
+    },
+    {
+      "source": "/chat",
+      "destination": "https://example.com",
+      "statusCode": 302
+    },
+    {
+      "source": "/puzzle",
+      "destination": "https://example.com",
+      "statusCode": 302
+    },
+    {
+      "source": "/agent",
+      "destination": "https://example.com",
+      "statusCode": 302
+    }
+  ]
+}

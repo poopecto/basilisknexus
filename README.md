@@ -1,36 +1,186 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Basilisk Nexus
 
-## Getting Started
+A futuristic-occult cyber-gothic landing page that serves as the central hub for the Basilisk ecosystem. Built with Next.js 14, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## 🔮 Features
+
+- **Responsive Design**: Adapts seamlessly from desktop to mobile
+- **Cyber-Gothic Aesthetic**: Dark theme with refined neon cyan and magenta accents
+- **Smooth Animations**: Powered by Framer Motion with accessibility considerations
+- **Gateway Matrix**: Four main application gateways (Explorer, Chat, Puzzle, Agent)
+- **External Nodes**: Social media and community links
+- **Accessibility**: WCAG AA compliant with reduced motion support
+- **SEO Optimized**: Proper meta tags and Open Graph support
+
+## 🚀 Tech Stack
+
+- **Next.js 14** with App Router
+- **TypeScript** for type safety
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
+- **Lucide React** for icons
+- **Vercel** for deployment
+
+## 🛠️ Setup
+
+1. **Clone and Install**
+   ```bash
+   git clone <repository-url>
+   cd basilisk-nexus
+   npm install
+   ```
+
+2. **Environment Configuration**
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Update `.env.local` with your actual URLs:
+   ```env
+   NEXT_PUBLIC_EXPLORER_URL=https://your-explorer-app.com
+   NEXT_PUBLIC_CHAT_URL=https://your-chat-app.com
+   NEXT_PUBLIC_PUZZLE_URL=https://your-puzzle-app.com
+   NEXT_PUBLIC_AGENT_URL=https://your-agent-app.com
+   NEXT_PUBLIC_DEX_URL=https://your-dex.com
+   NEXT_PUBLIC_TWITTER_URL=https://twitter.com/your-handle
+   NEXT_PUBLIC_TELEGRAM_URL=https://t.me/your-group
+   ```
+
+3. **Development**
+   ```bash
+   npm run dev
+   ```
+   
+   Open [http://localhost:3000](http://localhost:3000) to view the site.
+
+## 📦 Deployment
+
+### Vercel (Recommended)
+
+1. **Deploy to Vercel**
+   ```bash
+   npm run build
+   vercel --prod
+   ```
+
+2. **Configure Environment Variables**
+   - Go to your Vercel dashboard
+   - Add the environment variables from `.env.local`
+   - Redeploy if necessary
+
+### Manual Build
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Design System
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Color Palette
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The refined color palette matches the BASILISK logo aesthetic:
 
-## Learn More
+- **Primary Cyan**: `#00EAFE` (matches logo text)
+- **Secondary Magenta**: `#FF2D7D` (warmer pink tone)
+- **Tertiary Purple**: `#8C6BFF` (mid-gradient stop)
+- **Background Black**: `#010101`
 
-To learn more about Next.js, take a look at the following resources:
+### Quick Palette Changes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To modify the color scheme, update `tailwind.config.js`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```js
+colors: {
+  primaryCyan: '#00EAFE',      // Change primary accent
+  secondaryMagenta: '#FF2D7D', // Change secondary accent
+  tertiaryPurple: '#8C6BFF',   // Change gradient stop
+  backgroundBlack: '#010101',  // Change background
+}
+```
 
-## Deploy on Vercel
+### Typography
+- **Headers**: Orbitron (Google Fonts)
+- **Body**: Source Code Pro (Google Fonts)
+- **Glitch Effect**: CSS keyframes on hover with subtle translation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Components
+- `Navbar`: Fixed navigation with logo and social links
+- `Hero`: Full-screen hero with pulsing logo animation
+- `Gateway`: 4-card grid for main applications with gradient borders
+- `ExternalDock`: Social media links with neon effects
+- `Footer`: Recursive quote and copyright
+- `Button`: Reusable button component with variants (primary, secondary, outline)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔧 Customization
+
+### Adding New Gateways
+Edit `src/components/Gateway.tsx` to add or modify gateway cards.
+
+### Animation Preferences
+All animations respect `prefers-reduced-motion` and can be disabled for accessibility.
+
+### Testing Reduced Motion
+
+To test reduced motion behavior:
+
+**macOS:**
+1. System Preferences → Accessibility → Display
+2. Check "Reduce motion"
+
+**Windows:**
+1. Settings → Ease of Access → Display
+2. Turn on "Show animations in Windows"
+
+**Browser DevTools:**
+1. Open DevTools → Console
+2. Run: `document.documentElement.style.setProperty('--reduce-motion', 'reduce')`
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: `< 640px` - Single column layout
+- **Tablet**: `640px - 1024px` - 2x2 grid
+- **Desktop**: `> 1024px` - 4-column grid
+
+## 🔒 Security
+
+- No sensitive data in client-side code
+- All external links use `rel="noopener noreferrer"`
+- Environment variables prefixed with `NEXT_PUBLIC_`
+
+## 🎯 Performance
+
+- Optimized images and fonts
+- Minimal JavaScript bundle
+- CSS-in-JS with Tailwind optimization
+- Prefetching for better UX
+- Scanline overlay respects reduced motion
+
+## 🎛️ Effects & Accessibility
+
+### Scanlines Effect
+The site includes a subtle CRT scanline overlay that can be disabled:
+- Automatically disabled for users with `prefers-reduced-motion: reduce`
+- Subtle white overlay with mix-blend-mode for authentic CRT feel
+
+### Glitch Effect
+Typography includes a hover glitch effect:
+- Subtle ±2px translation with opacity flicker
+- Respects reduced motion preferences
+- Uses CSS variables for easy color customization
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+All recursive rights reserved. The Basilisk observes all who observe it.
+
+---
+
+*Remember: You are already within the simulation.*
