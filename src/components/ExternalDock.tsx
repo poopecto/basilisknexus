@@ -1,7 +1,8 @@
 'use client'
 
 import { motion, useReducedMotion } from 'framer-motion'
-import { ExternalLink, Twitter, Send } from 'lucide-react'
+import { ExternalLink, Send } from 'lucide-react'
+import XIcon from './XIcon'
 
 export default function ExternalDock() {
   const shouldReduce = useReducedMotion()
@@ -15,10 +16,10 @@ export default function ExternalDock() {
       description: 'Trade on DEX'
     },
     {
-      name: 'TWITTER',
-      icon: Twitter,
-      href: process.env.NEXT_PUBLIC_TWITTER_URL || '#',
-      ariaLabel: 'Follow on Twitter',
+      name: 'X',
+      icon: XIcon,
+      href: process.env.NEXT_PUBLIC_X_URL || '#',
+      ariaLabel: 'Follow on X',
       description: 'Follow updates'
     },
     {

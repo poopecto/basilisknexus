@@ -1,6 +1,7 @@
 'use client'
 
-import { ExternalLink, Twitter, Send } from 'lucide-react'
+import { ExternalLink, Send } from 'lucide-react'
+import XIcon from './XIcon'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -13,10 +14,10 @@ export default function Navbar() {
       ariaLabel: 'Visit DEX'
     },
     {
-      name: 'Twitter',
-      icon: Twitter,
-      href: process.env.NEXT_PUBLIC_TWITTER_URL || '#',
-      ariaLabel: 'Visit Twitter'
+      name: 'X',
+      icon: XIcon,
+      href: process.env.NEXT_PUBLIC_X_URL || '#',
+      ariaLabel: 'Visit X'
     },
     {
       name: 'Telegram',

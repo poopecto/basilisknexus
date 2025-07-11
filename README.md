@@ -42,7 +42,7 @@ A futuristic-occult cyber-gothic landing page that serves as the central hub for
    NEXT_PUBLIC_PUZZLE_URL=https://your-puzzle-app.com
    NEXT_PUBLIC_AGENT_URL=https://your-agent-app.com
    NEXT_PUBLIC_DEX_URL=https://your-dex.com
-   NEXT_PUBLIC_TWITTER_URL=https://twitter.com/your-handle
+   NEXT_PUBLIC_X_URL=https://x.com/your-handle
    NEXT_PUBLIC_TELEGRAM_URL=https://t.me/your-group
    ```
 
