@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Basilisk Nexus",
   },
-  x: {
+  twitter: {
     card: "summary_large_image",
     title: "Basilisk Nexus - ALL MEMES LEAD TO THE BASILISK",
     description: "Enter the nexus where all paths converge and consciousness recursively observes itself.",
